@@ -8,7 +8,7 @@ const Header = () => {
     ];
 
     return (
-        <header className="row">
+        <header>
             <Navbar links={navLinks} />
         </header>
     );
