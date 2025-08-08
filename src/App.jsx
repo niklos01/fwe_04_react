@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Footer from './components/footer';
 import Home from './pages/Home';
 import Personen from './pages/Personen';
+import Form from './components/form';
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/personen" element={<Personen />} />
+                    <Route path="/addperson" element={<Form />} />
                 </Routes>
             </main>
             <Footer />
