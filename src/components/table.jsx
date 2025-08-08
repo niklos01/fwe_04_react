@@ -1,5 +1,3 @@
-import React from 'react';
-
 function Table({ persons }) {
     if (!persons || persons.length === 0) {
         return <div>Keine Daten verfügbar</div>;
@@ -18,15 +16,17 @@ function Table({ persons }) {
                     </tr>
                 </thead>
                 <tbody>
-                    {persons.map((person) => (
-                        <tr key={person.id}>
-                            <td>{person.id}</td>
-                            <td>{person.vorname}</td>
-                            <td>{person.name}</td>
-                            <td>{person.firma}</td>
-                            <td>{person.abteilung}</td>
-                        </tr>
-                    ))}
+                    {persons
+                        .filter((person) => person.firma && person.abteilung)
+                        .map((person) => (
+                            <tr key={person.id}>
+                                <td>{person.id}</td>
+                                <td>{person.vorname}</td>
+                                <td>{person.name}</td>
+                                <td>{person.firma}</td>
+                                <td>{person.abteilung}</td>
+                            </tr>
+                        ))}
                 </tbody>
             </table>
         </div>
