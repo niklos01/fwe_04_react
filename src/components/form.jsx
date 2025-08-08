@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import FormInput from './form/FormInput';
 
 function Form() {
     const [name, setName] = useState('');
@@ -31,58 +32,34 @@ function Form() {
 
     return (
         <form onSubmit={sendToApi}>
-            <div className="mb-3">
-                <label htmlFor="vorname" className="form-label">
-                    Vorname
-                </label>
-                <input
-                    type="text"
-                    className="form-control"
-                    id="vorname"
-                    value={vorname}
-                    onChange={(e) => setVorname(e.target.value)}
-                    placeholder="Enter vorname"
-                />
-            </div>
-            <div className="mb-3">
-                <label htmlFor="name" className="form-label">
-                    Name
-                </label>
-                <input
-                    type="text"
-                    className="form-control"
-                    id="name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="Enter name"
-                />
-            </div>
-            <div className="mb-3">
-                <label htmlFor="firma" className="form-label">
-                    Firma
-                </label>
-                <input
-                    type="text"
-                    className="form-control"
-                    id="firma"
-                    value={firma}
-                    onChange={(e) => setFirma(e.target.value)}
-                    placeholder="Enter firma"
-                />
-            </div>
-            <div className="mb-3">
-                <label htmlFor="abteilung" className="form-label">
-                    Abteilung
-                </label>
-                <input
-                    type="text"
-                    className="form-control"
-                    id="abteilung"
-                    value={abteilung}
-                    onChange={(e) => setAbteilung(e.target.value)}
-                    placeholder="Enter abteilung"
-                />
-            </div>
+            <FormInput
+                label="Vorname"
+                id="vorname"
+                value={vorname}
+                onChange={(e) => setVorname(e.target.value)}
+                placeholder="Vorname eingeben"
+            />
+            <FormInput
+                label="Name"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Name eingeben"
+            />
+            <FormInput
+                label="Firma"
+                id="firma"
+                value={firma}
+                onChange={(e) => setFirma(e.target.value)}
+                placeholder="Firma eingeben"
+            />
+            <FormInput
+                label="Abteilung"
+                id="abteilung"
+                value={abteilung}
+                onChange={(e) => setAbteilung(e.target.value)}
+                placeholder="Abteilung eingeben"
+            />
             <button type="submit" className="btn btn-primary">
                 Submit
             </button>
