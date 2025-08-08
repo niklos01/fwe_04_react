@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import table from '../components/table'
 
 const Personen = () => {
   const [tableData, useTableData] = useState([])
@@ -18,18 +19,8 @@ const Personen = () => {
   return (
     <div className="Personen">
       <h1>hier perosn</h1>
-      {tableData.map((person, index) => (
-        <div key={index} className="card mb-3">
-          <div className="card-body"> 
-            <h5 className="card-title">{person.vorname} {person.nachname}</h5>
-            <p className="card-text">Email: {person.email}</p>
-            <p className="card-text">Telefon: {person.telefon}</p>
-            <p className="card-text">Fachbereich: {person.fachbereich}</p>
-            <p className="card-text">Position: {person.position}</p>
-          </div>
-        </div>
-      ))}
-    </div>
+      <table persons={tableData} />
+    </div >
   )
 }
 
